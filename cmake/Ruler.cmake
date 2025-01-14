@@ -18,7 +18,7 @@ function(ae2f_RulerMeasureFromSource prm_SourcePath prm_OutPath prm_DefinitionNa
     configure_file(${ae2f_RulerDir}/cmake/Ruler.h.in ${prm_OutPath})
 endfunction()
 
-function(ae2f_RulerMeasure prm_type prm_out)
+function(ae2f_RulerMeasure prm_type prm_out prm_flags)
     configure_file(${ae2f_RulerDir}/cmake/Ruler.c.in ${ae2f_RulerDir}/workaround/a.c)
     file(WRITE ${ae2f_RulerDir}/workaround/a.h "")
     foreach(header ${ARGN})
